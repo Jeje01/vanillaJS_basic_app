@@ -10,11 +10,11 @@ function paintImage(imgNumber){
     const image = new Image();
     image.src=`images/${imgNumber+1}.JPG`;
     image.classList.add("bgImage");
-    body.appendChild(image);
+    body.prepend(image);
 }
 
 function genRandom(){
-    const number = Math.floor(Math.random() * 8) ;
+    const number = Math.floor(Math.random() * IMG_NUMBER) ;
     return number;
 }
 
