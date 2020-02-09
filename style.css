@@ -1,5 +1,7 @@
+@import url('https://fonts.googleapis.com/css?family=Merriweather:400,700&display=swap');
 body{
   background-color: #25313d;
+  
 }
 
 .btn{
@@ -7,7 +9,9 @@ body{
 }
 
 body{
-  color: #34495e;
+  color: white;
+  text-shadow: 3px 3px 3px grey;
+  font-family: 'Merriweather', serif;
 }
 
 .clicked{
