@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
-    <title>Something</title>
+    <title>To Do</title>
     <link href="style.css" rel="stylesheet" type="text/css" />
   </head>
   <body>
@@ -18,9 +18,16 @@
     <form class="js-toDoForm">
       <input type="text" placeholder="Write a to do" />
     </form>
-    <ul class="js-toDoList">
-    </ul>
-
+    <div class="lists">
+      <div>
+        <h2>To Do</h2>
+        <ul class="js-toDoList"></ul>
+      </div>
+      <div>
+        <h2>Finished</h2>
+        <ul class="js-finishedList"></ul>
+      </div>
+    </div>
 
     <script src ="clock.js"></script>
     <script src ="greeting.js"></script>
