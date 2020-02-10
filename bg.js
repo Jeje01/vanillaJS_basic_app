@@ -1,6 +1,6 @@
 const body = document.querySelector("body");
 
-const IMG_NUMBER = 5;
+const IMG_NUMBER = 4;
 
 function handleImgLoad(){
     console.log("finished loading");
@@ -8,7 +8,7 @@ function handleImgLoad(){
 
 function paintImage(imgNumber){
     const image = new Image();
-    image.src=`img/${imgNumber+1}.JPG`;
+    image.src=`img/${imgNumber+2}.JPG`;
     image.classList.add("bgImage");
     body.prepend(image);
 }
