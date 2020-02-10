@@ -3,11 +3,11 @@ const toDoForm = document.querySelector(".js-toDoForm"),
     toDoList = document.querySelector(".js-toDoList"),
     doneList = document.querySelector(".js-finishedList");
 
-const TODOS_LS = 'toDos',
-    FIN_LS = "done";
+const TODOS_LS = "toDos",
+    FIN_LS = "dones";
 
 let toDos = []
-    done = [];
+    dones = [];
 
 function deleteToDo(event){
     const btn = event.target;
@@ -18,18 +18,18 @@ function deleteToDo(event){
     });
     toDos = cleanToDos;
     console.log(toDos);
-    saveTodos();
+    saveToDos();
 }
 
 function deleteFin(event){
     const btn = event.target;
     const li = btn.parentNode;
     doneList.removeChild(li);
-    const cleanToDos = done.filter(function(toDo){
+    const cleanToDos = dones.filter(function(toDo){
         return toDo.id !== parseInt(li.id);
     });
-    done = cleanToDos;
-    console.log(done);
+    dones = cleanToDos;
+    console.log(dones);
     saveDone();
 }
 
@@ -47,7 +47,7 @@ function checkToDo(event){
 }
 
 function saveDone(){
-    localStorage.setItem(FIN_LS, JSON.stringify(done));
+    localStorage.setItem(FIN_LS, JSON.stringify(dones));
 }
 
 function rewindToDo(event){
@@ -55,11 +55,11 @@ function rewindToDo(event){
    const li = btn.parentNode;
    paintToDo(li.querySelector("span").textContent);
    doneList.removeChild(li);
-   const cleanToDos = done.filter(function(toDo){
-        return toDo.id !==parseInt(li.id);
+   const cleanToDos = dones.filter(function(done){
+        return done.id !==parseInt(li.id);
     }); 
-    done = cleanToDos;
-    console.log(done);
+    dones = cleanToDos;
+    console.log(dones);
     saveDone();
 }
 
@@ -73,7 +73,7 @@ function paintCheck(text){
     const delBtn = document.createElement("button");
     const rewindBtn = document.createElement("button");
     const span = document.createElement("span");
-    const newId = done.length + 1;
+    const newId = dones.length + 1;
     delBtn.style.border= '0px';
     delBtn.style.borderRadius = '15px';
     delBtn.style.marginLeft ='6px';
@@ -97,7 +97,7 @@ function paintCheck(text){
         text: text,
         id: newId
     }
-    done.push(doneObj);
+    dones.push(doneObj);
     saveDone();
 }
 
@@ -131,7 +131,7 @@ function paintToDo(text){
         id: newId
     };
     toDos.push(toDoObj);
-    saveTodos();
+    saveToDos();
 }
 
 function handleSubmit(event){
